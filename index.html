@@ -2,25 +2,84 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Mi página</title>
+  <title>Portfolio de Simón Giordano</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-      text-align: center;
-      padding: 50px;
-    }
-    h1 {
+      margin: 0;
+      background-color: #f9f9f9;
       color: #333;
     }
-    p {
-      font-size: 18px;
-      color: #555;
+    header {
+      background: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      margin: 0 15px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 50px;
+      text-align: center;
+    }
+    .proyectos img {
+      width: 250px;
+      margin: 15px;
+      border-radius: 10px;
+      box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
+    }
+    .boton {
+      display: inline-block;
+      padding: 12px 20px;
+      margin: 10px;
+      background: #333;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    .boton:hover {
+      background: #555;
     }
   </style>
 </head>
 <body>
-  <h1>Hola, soy Simón</h1>
-  <p>Esta es mi primera página en GitHub Pages.</p>
+  <header>
+    <h1>Simón Giordano</h1>
+    <p>Estudiante de videojuegos | Diseñador gráfico</p>
+    <nav>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <section id="sobre-mi">
+    <h2>Sobre mí</h2>
+    <p>Hola, soy Simón. Soy estudiante de desarrollo de videojuegos y también trabajo con diseño gráfico. Este es mi portfolio donde muestro algunas ideas y proyectos.</p>
+  </section>
+
+  <section id="proyectos" class="proyectos">
+    <h2>Proyectos</h2>
+    <p>Algunas imágenes de ideas y trabajos:</p>
+    <img src="https://via.placeholder.com/250" alt="Proyecto 1">
+    <img src="https://via.placeholder.com/250" alt="Proyecto 2">
+    <img src="https://via.placeholder.com/250" alt="Proyecto 3">
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <a class="boton" href="mailto:tuemail@gmail.com">📧 Email</a>
+    <a class="boton" href="tel:+5491123456789">📱 Teléfono</a>
+    <a class="boton" href="https://wa.me/5491123456789" target="_blank">💬 WhatsApp</a>
+    <a class="boton" href="https://youtube.com/" target="_blank">▶️ YouTube</a>
+  </section>
 </body>
 </html>
