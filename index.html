@@ -2,117 +2,200 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Simón Giordano</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simón Giordano - Portfolio</title>
   <style>
+    :root {
+      --lavender: #e6e6fa;
+      --lavender-dark: #d0d0e1;
+      --dark-blue: #2c3e50;
+      --medium-blue: #4a69bd;
+      --accent: #ffdd59;
+    }
+    
     html, body {
       height: 100%;
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #e6e6fa; /* Fondo lavanda */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, var(--lavender) 0%, var(--lavender-dark) 100%);
       color: #333;
+      line-height: 1.6;
     }
 
     header {
-      background: #222;
+      background: linear-gradient(to right, var(--dark-blue), var(--medium-blue));
       color: white;
-      padding: 30px;
+      padding: 40px 30px;
       text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     header h1 {
       margin: 0;
-      font-size: 2.5em;
+      font-size: 2.8em;
+      letter-spacing: 1px;
     }
 
     header p {
-      font-size: 1.2em;
-      margin-top: 10px;
+      font-size: 1.3em;
+      margin-top: 15px;
+      opacity: 0.9;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
     }
 
     section {
-      background-color: #e6e6fa; /* mismo color que el body */
-      padding: 50px 30px;
-      max-width: 1000px;
-      margin: 20px auto;
+      background-color: rgba(255, 255, 255, 0.92);
+      padding: 40px;
+      margin: 30px 0;
       border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+      border-left: 5px solid var(--medium-blue);
     }
+
+    section:hover {
+      transform: translateY(-5px);
+    }
+
     section h2 {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
+      color: var(--medium-blue);
+      font-size: 2em;
     }
 
     .arte {
       text-align: center;
-      margin-bottom: 40px;
     }
 
     .arte p {
-      font-size: 1.1em;
+      font-size: 1.2em;
       color: #555;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .btn {
       display: inline-block;
-      background: #222;
+      background: linear-gradient(to right, var(--dark-blue), var(--medium-blue));
       color: white;
-      padding: 12px 25px;
+      padding: 14px 30px;
       border-radius: 8px;
       text-decoration: none;
-      font-size: 1em;
-      transition: background 0.3s, transform 0.2s;
-      margin-top: 10px;
+      font-size: 1.1em;
+      transition: all 0.3s ease;
+      margin-top: 15px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
     .btn:hover {
-      background: #444;
-      transform: translateY(-2px);
+      background: linear-gradient(to right, var(--medium-blue), var(--dark-blue));
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
     }
 
     .docs {
       display: flex;
       justify-content: space-between;
-      align-items: stretch;
-      gap: 20px;
-      text-align: center;
       flex-wrap: wrap;
+      gap: 25px;
     }
 
     .doc-item {
       flex: 1;
-      padding: 20px 15px;
-      border-right: 2px solid #ccc;
-      min-width: 200px;
-      box-sizing: border-box;
+      min-width: 280px;
+      padding: 25px;
+      background: #f8f9ff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      text-align: center;
+      border-top: 4px solid var(--medium-blue);
+      transition: transform 0.3s ease;
     }
 
-    .doc-item:last-child {
-      border-right: none;
+    .doc-item:hover {
+      transform: translateY(-5px);
     }
 
     .doc-item p {
-      font-size: 1em;
-      margin-bottom: 10px;
+      font-size: 1.1em;
+      margin-bottom: 20px;
       color: #555;
     }
 
+    .gallery-preview {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .art-sample {
+      width: 150px;
+      height: 150px;
+      border-radius: 8px;
+      background: linear-gradient(45deg, var(--medium-blue), var(--lavender));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .art-sample:hover {
+      transform: scale(1.05);
+    }
+
     footer {
-      background: #222;
+      background: linear-gradient(to right, var(--dark-blue), var(--medium-blue));
       color: white;
       text-align: center;
-      padding: 20px;
-      margin-top: 40px;
+      padding: 30px;
+      margin-top: 50px;
+    }
+
+    footer p {
+      margin-bottom: 15px;
+      font-size: 1.1em;
     }
 
     footer a {
-      color: #ffcc00;
-      margin: 0 10px;
+      color: var(--accent);
+      margin: 0 15px;
       text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
     }
 
     footer a:hover {
+      color: white;
       text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .docs {
+        flex-direction: column;
+      }
+      
+      section {
+        padding: 25px;
+      }
+      
+      header h1 {
+        font-size: 2.2em;
+      }
     }
   </style>
 </head>
@@ -122,35 +205,44 @@
     <p>Estudiante en desarrollo de videojuegos | Artista digital</p>
   </header>
 
-  <section class="arte">
-    <h2>Mi Arte</h2>
-    <p>Además de programar me gusta mucho el arte digital.</p>
-    <a href="arte.html" class="btn">🎨 Ver galería completa</a>
-  </section>
+  <div class="container">
+    <section class="arte">
+      <h2>Mi Arte</h2>
+      <p>Además de programar me gusta mucho el arte digital. Explora mi galería para ver mis creaciones artísticas y diseños conceptuales.</p>
+      
+      <div class="gallery-preview">
+        <div class="art-sample">Arte 1</div>
+        <div class="art-sample">Arte 2</div>
+        <div class="art-sample">Arte 3</div>
+      </div>
+      
+      <a href="arte.html" class="btn">🎨 Ver galería completa</a>
+    </section>
 
-  <section>
-    <h2>Mis Documentos</h2>
-    <div class="docs">
-      <div class="doc-item">
-        <p>Este es mi primer Pitch Document, todo fue pensado para un juego de mesa.</p>
-        <a href="https://docs.google.com/document/d/10TONCQiCvz2l-XhMyXBfvgIdh-2wzCUA" target="_blank" class="btn">📄 Ver</a>
+    <section>
+      <h2>Mis Documentos</h2>
+      <div class="docs">
+        <div class="doc-item">
+          <p>Este es mi primer Pitch Document, todo fue pensado para un juego de mesa.</p>
+          <a href="https://docs.google.com/document/d/10TONCQiCvz2l-XhMyXBfvgIdh-2wzCUA" target="_blank" class="btn">📄 Ver Documento</a>
+        </div>
+        <div class="doc-item">
+          <p>Este documento es sobre mi primer Proposal. Algún día lo voy a usar como guía para desarrollar mi propio juego.</p>
+          <a href="https://docs.google.com/document/d/1bkv677MXsQXACvuy9lGQc2YxklmuFd0a" target="_blank" class="btn">📄 Ver Documento</a>
+        </div>
+        <div class="doc-item">
+          <p>Este es otro Pitch Document que hice, en este caso es un print and play.</p>
+          <a href="https://docs.google.com/document/d/1o6tw6v3LyxNrWp0Tu4S2nqdMsJ5Xc1PQJjD6aY1RIyo" target="_blank" class="btn">📄 Ver Documento</a>
+        </div>
       </div>
-      <div class="doc-item">
-        <p>Este documento es sobre mi primer Proposal. Algún día lo voy a usar como guía para desarrollar mi propio juego.</p>
-        <a href="https://docs.google.com/document/d/1bkv677MXsQXACvuy9lGQc2YxklmuFd0a" target="_blank" class="btn">📄 Ver</a>
-      </div>
-      <div class="doc-item">
-        <p>Este es otro Pitch Document que hice, en este caso es un print and play.</p>
-        <a href="https://docs.google.com/document/d/1o6tw6v3LyxNrWp0Tu4S2nqdMsJ5Xc1PQJjD6aY1RIyo" target="_blank" class="btn">📄 Ver</a>
-      </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
   <footer>
-    <p>Links:</p>
-    <a href="https://www.youtube.com/@SaymoonZ" target="_blank">YouTube</a> |
-    <a href="mailto:simongiordano2015@gmail.com">Email</a> |
-    <a href="https://gitlab.com/users/GiordanoSimon/contributed" target="_blank">GitHub</a>
+    <p>Conectemos a través de estas plataformas:</p>
+    <a href="https://www.youtube.com/@SaymoonZ" target="_blank">YouTube</a>
+    <a href="mailto:simongiordano2015@gmail.com">Email</a>
+    <a href="https://gitlab.com/users/GiordanoSimon/contributed" target="_blank">GitLab</a>
   </footer>
 </body>
 </html>
