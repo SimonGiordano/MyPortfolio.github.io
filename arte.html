@@ -52,13 +52,27 @@
     <p>Una selección de mis dibujos</p>
   </header>
 
-  <div class="galeria">
-    <img src="img/Flowers Distopic.png" alt="Dibujo 1">
-    <img src="img/Girl.png" alt="Dibujo 2">
-    <img src="img/Smoke.png" alt="Dibujo 3">
-    <img src="img/Stars.png" alt="Dibujo 3">
-  </div>
+  <div class="galeria" id="galeria"></div>
 
   <a class="volver" href="index.html">⬅️ Volver al inicio</a>
+
+  <script>
+    // Lista de imágenes (solo agregás acá los nombres de archivo que subís a /img/)
+    const imagenes = [
+      "dibujo1.png",
+      "dibujo2.jpg",
+      "dibujo3.png",
+      "dibujo4.jpg"
+    ];
+
+    const galeria = document.getElementById("galeria");
+
+    imagenes.forEach(img => {
+      const imagen = document.createElement("img");
+      imagen.src = "img/" + img;
+      imagen.alt = img;
+      galeria.appendChild(imagen);
+    });
+  </script>
 </body>
 </html>
