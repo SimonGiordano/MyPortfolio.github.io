@@ -2,83 +2,104 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio de Simón Giordano</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #fafafa;
-      color: #333;
+    :root {
+      --bg:#f7f7f7; --fg:#222; --muted:#666; --card:#ffffff; --accent:#333;
     }
-    header {
-      background: #333;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-    nav {
-      margin-top: 10px;
-    }
-    nav a {
-      margin: 0 15px;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    section {
-      padding: 50px;
-      text-align: center;
-    }
-    .proyectos img {
-      width: 250px;
-      margin: 15px;
-      border-radius: 10px;
-      box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
-    }
-    .boton {
-      display: inline-block;
-      padding: 12px 20px;
-      margin: 10px;
-      background: #333;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: 0.3s;
-    }
-    .boton:hover {
-      background: #555;
-    }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Arial, sans-serif; background:var(--bg); color:var(--fg); }
+    header { background:var(--accent); color:#fff; padding:28px 16px; text-align:center; }
+    header h1 { margin:0 0 6px 0; }
+    header p { margin:0; color:#ddd; }
+    nav { margin-top:14px; display:flex; gap:18px; justify-content:center; flex-wrap:wrap; }
+    nav a { color:#fff; text-decoration:none; font-weight:bold; padding:8px 12px; border-radius:8px; border:1px solid rgba(255,255,255,.2); }
+    main { max-width:1000px; margin:0 auto; padding:32px 16px 60px; }
+    section { margin:42px 0; text-align:center; }
+    h2 { margin:0 0 10px 0; }
+    p.lead { color:var(--muted); max-width:750px; margin:8px auto 0; }
+
+    .boton { display:inline-block; padding:12px 18px; background:var(--accent); color:#fff; text-decoration:none; border-radius:10px; margin:8px; transition:transform .06s ease; }
+    .boton:hover { transform:translateY(-1px); }
+
+    .cards { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:18px; margin-top:22px; }
+    .card { background:var(--card); border-radius:14px; padding:18px; box-shadow:0 6px 18px rgba(0,0,0,.08); display:flex; flex-direction:column; align-items:center; }
+    .card .icon { font-size:40px; line-height:1; margin-bottom:8px; }
+    .card h3 { margin:6px 0 4px 0; font-size:18px; }
+    .card p { margin:0; color:var(--muted); font-size:14px; }
+    .card .actions { margin-top:14px; display:flex; gap:10px; flex-wrap:wrap; justify-content:center; }
+    footer { text-align:center; color:var(--muted); padding:24px; }
   </style>
 </head>
 <body>
   <header>
     <h1>Simón Giordano</h1>
-    <p>Estudiante de videojuegos | Diseñador gráfico</p>
+    <p>Portfolio personal · Desarrollo de videojuegos y arte</p>
     <nav>
       <a href="#sobre-mi">Sobre mí</a>
-      <a href="#proyectos">Proyectos</a>
+      <a href="arte.html">Mi arte</a>
+      <a href="#documentos">Documentos</a>
       <a href="#contacto">Contacto</a>
     </nav>
   </header>
 
-  <section id="sobre-mi">
-    <h2>Sobre mí</h2>
-    <p>Hola, soy Simón. Soy estudiante de desarrollo de simuladores y videojuegos, también trabajo con diseño gráfico. Este es mi portfolio donde muestro algunas ideas y proyectos.</p>
-  </section>
+  <main>
+    <section id="sobre-mi">
+      <h2>Sobre mí</h2>
+      <p class="lead">Estudiante de videojuegos y creador visual. En este espacio muestro mi trabajo y dejo accesos rápidos a mis documentos y redes.</p>
+    </section>
 
-  <section id="proyectos">
-    <h2>Mi arte</h2>
-    <p>Además de la programación, me dedico al dibujo y al arte digital.</p>
-    <a class="boton" href="arte.html">🎨 Ver mi arte</a>
-  </section>
+    <section id="documentos">
+      <h2>Documentos</h2>
+      <p class="lead">Vista limpia con accesos a Drive y a archivos PDF en el repositorio.</p>
+      <div class="cards">
+        <div class="card">
+          <div class="icon">📝</div>
+          <h3>Documento en Drive</h3>
+          <p>Visualización integrada de Google Docs</p>
+          <div class="actions">
+            <a class="boton" href="https://docs.google.com/document/d/ID_DE_TU_DOC/preview" target="_blank" rel="noopener">Ver documento</a>
+          </div>
+        </div>
 
+        <div class="card">
+          <div class="icon">📄</div>
+          <h3>CV (PDF)</h3>
+          <p>Archivo alojado en el repo</p>
+          <div class="actions">
+            <a class="boton" href="docs/cv.pdf" target="_blank" rel="noopener">Abrir</a>
+            <a class="boton" href="docs/cv.pdf" download>Descargar</a>
+          </div>
+        </div>
 
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <a class="boton" href="mailto:tuemail@gmail.com">📧 Email</a>
-    <a class="boton" href="https://wa.me/5491123456789" target="_blank">💬 WhatsApp</a>
-    <a class="boton" href="https://youtube.com/" target="_blank">▶️ YouTube</a>
-  </section>
+        <div class="card">
+          <div class="icon">📑</div>
+          <h3>Propuesta (PDF)</h3>
+          <p>Archivo alojado en el repo</p>
+          <div class="actions">
+            <a class="boton" href="docs/propuesta.pdf" target="_blank" rel="noopener">Abrir</a>
+            <a class="boton" href="docs/propuesta.pdf" download>Descargar</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <a class="boton" href="mailto:tuemail@ejemplo.com">📧 Email</a>
+      <a class="boton" href="https://wa.me/54911XXXXXXXX" target="_blank" rel="noopener">💬 WhatsApp</a>
+      <a class="boton" href="https://youtube.com/@TU_CANAL" target="_blank" rel="noopener">▶️ YouTube</a>
+      <a class="boton" href="https://github.com/simongiordano" target="_blank" rel="noopener">💻 GitHub</a>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="y"></span> Simón Giordano
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
